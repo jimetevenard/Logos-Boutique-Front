@@ -7,13 +7,15 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

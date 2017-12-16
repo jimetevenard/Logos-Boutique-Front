@@ -2,7 +2,7 @@
   <div class="container" class="nav1">
     <div class="row">
       <div class="col-sm-2">
-      Boutique
+        Boutique
       </div>
       <div class="col-sm-4">
         <div class="input-group">
@@ -14,8 +14,9 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-2">
-        <i class="fa fa-shopping-cart" aria-hidden="true"> Panier</i>
+      <div class="col-sm-2" data-toggle="modal" data-target="#myModal">
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> Panier</i>
+        <panier [panierProduits]="panierProduits"></panier>
       </div>
       <div class="col-sm-2">
         <a href="#">Sign in</a>
@@ -44,18 +45,17 @@
         <a href="#">Premium</a>
       </div>
       <div class="col-sm-1">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-sm-1">
-        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-sm-1">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-sm-1">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
       </div>
     </div>
-
   </div>
 </header>
