@@ -11,13 +11,17 @@ import { ProductBlockComponent } from './product-block/product-block.component';
 import { ProduitService } from './service/produit.service';
 
 
+import { CarouselComponent } from './carousel/carousel.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProductListComponent,
-    ProductBlockComponent
+    ProductBlockComponent,
+    CarouselComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
