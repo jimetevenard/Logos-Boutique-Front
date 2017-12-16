@@ -1,0 +1,5 @@
+<div>
+  <product-block *ngFor="let produit of listeProduit"
+  [produit]="produit"
+  (click)='clicked(produit)'></product-block>
+</div>

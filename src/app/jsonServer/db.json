@@ -1,0 +1,124 @@
+{
+    "produits":[
+        {
+            "id": 1, 
+            "nom": "livre1", 
+            "description": "description1", 
+            "prix": 19.99, 
+            "quantite": 15, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 1, 
+                "libelle": 
+                "francais", 
+                "codeIso": "codeIso1"
+            }, 
+            "prixPremium": 15.99
+        },
+        {
+            "id": 2, 
+            "nom": "livre2", 
+            "description": "description2", 
+            "prix": 17.99, 
+            "quantite": 17, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 2, 
+                "libelle": 
+                "anglais", 
+                "codeIso": "codeIso2"
+            }, 
+            "prixPremium": 13.99
+        },
+        {
+            "id": 1, 
+            "nom": "livre1", 
+            "description": "description1", 
+            "prix": 19.99, 
+            "quantite": 15, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 1, 
+                "libelle": 
+                "francais", 
+                "codeIso": "codeIso1"
+            }, 
+            "prixPremium": 15.99
+        },
+        {
+            "id": 2, 
+            "nom": "livre2", 
+            "description": "description2", 
+            "prix": 17.99, 
+            "quantite": 17, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 2, 
+                "libelle": 
+                "anglais", 
+                "codeIso": "codeIso2"
+            }, 
+            "prixPremium": 13.99
+        },
+        {
+            "id": 1, 
+            "nom": "livre1", 
+            "description": "description1", 
+            "prix": 19.99, 
+            "quantite": 15, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 1, 
+                "libelle": 
+                "francais", 
+                "codeIso": "codeIso1"
+            }, 
+            "prixPremium": 15.99
+        },
+        {
+            "id": 2, 
+            "nom": "livre2", 
+            "description": "description2", 
+            "prix": 17.99, 
+            "quantite": 17, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 2, 
+                "libelle": 
+                "anglais", 
+                "codeIso": "codeIso2"
+            }, 
+            "prixPremium": 13.99
+        },
+        {
+            "id": 1, 
+            "nom": "livre1", 
+            "description": "description1", 
+            "prix": 19.99, 
+            "quantite": 15, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 1, 
+                "libelle": 
+                "francais", 
+                "codeIso": "codeIso1"
+            }, 
+            "prixPremium": 15.99
+        },
+        {
+            "id": 2, 
+            "nom": "livre2", 
+            "description": "description2", 
+            "prix": 17.99, 
+            "quantite": 17, 
+            "listeImagesProduit": null, 
+            "langue":{
+                "id": 2, 
+                "libelle": 
+                "anglais", 
+                "codeIso": "codeIso2"
+            }, 
+            "prixPremium": 13.99
+        }
+    ]
+}
