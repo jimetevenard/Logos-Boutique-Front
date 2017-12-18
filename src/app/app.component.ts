@@ -3,6 +3,7 @@ import { Produit } from './models/Produit.model';
 import { Langue } from './models/Langue.model';
 import { ImagesProduit } from './models/ImagesProduit.model';
 import { ProduitService } from './service/produit.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent {
     );
   }
 
-  constructor(private produitService: ProduitService) {
+  constructor(private produitService: ProduitService,  appRootRouter: Router) {
     this.getAllProduits();
     this.panierProduits = [
       new Produit(
@@ -38,6 +39,8 @@ export class AppComponent {
         15.99
       )
     ];
+
+  
 
   }
 }
