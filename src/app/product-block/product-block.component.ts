@@ -15,14 +15,15 @@ export class ProductBlockComponent implements OnInit {
   @Input()
   appRootRouter: Router;
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  // clicked(product: Produit): void {
-  //   console.log(product);
-  //   this.appRootRouter.navigate(['/product-details', this.produit]);
-  // }
+  clickProduit(product: Produit): void {
+    console.log('C\'est l\'heure du Kebab !');
+    console.log(product);
+    this.router.navigate(['/product-details', this.produit]);
+  }
 
 }
