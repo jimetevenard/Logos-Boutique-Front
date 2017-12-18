@@ -1,0 +1,39 @@
+.footer {
+    margin-top: 10px;
+    height: 12vh;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(135, 138, 138);
+    color: white;
+    text-align: center;
+ }
+
+ .footerDiv
+ {
+    
+    width:25%;
+ }
+ 
+ #contactDiv
+ {
+ float:left;
+ }
+ 
+ #iconicDiv
+ {
+    margin-top: 15px;
+    float:left;
+ }
+ 
+ #categorieDiv
+ {
+    float:left;
+ }
+
+ #suivieDiv
+ {
+    float:left;
+ }
+ 
+ 

@@ -9,6 +9,7 @@ export class PanierComponent implements OnInit {
   
 @Input()
 panierProduits;
+
   constructor() { }
 
   ngOnInit() {

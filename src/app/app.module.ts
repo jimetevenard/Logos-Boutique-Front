@@ -21,6 +21,7 @@ import { ProductCheminComponent } from './product-chemin/product-chemin.componen
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { FiltreBoardComponent } from './filtre-board/filtre-board.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HomeComponent } from './home/home.component';
     ProductImgsComponent,
     ProductSuggestionComponent,
     ProductCheminComponent,
-    HomeComponent
+    HomeComponent,
+    FiltreBoardComponent
   ],
   imports: [
     BrowserModule,
