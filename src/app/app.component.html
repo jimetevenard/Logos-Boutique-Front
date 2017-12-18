@@ -1,5 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header [panierProduits]="panierProduits"></app-header>
-<home></home>
+
+
+<home [appRootRouter]="appRootRouter" [produits]="produits"></home>
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

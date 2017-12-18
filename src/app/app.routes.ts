@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 
 export const ROUTES: Routes = [
-    {path: '', redirectTo: 'app-root', pathMatch: 'full'},
-
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'home', component: HomeComponent},
     {path: 'product-details', component: ProductDetailsComponent}
 ];

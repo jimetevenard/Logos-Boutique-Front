@@ -1,5 +1,6 @@
 <div>
   <product-block *ngFor="let produit of listeProduit"
+  (click)='clicked(produit)'
   [produit]="produit"
-  (click)='clicked(produit)'></product-block>
+  [appRootRouter]="appRootRouter"></product-block>
 </div>

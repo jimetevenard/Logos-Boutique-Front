@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Produit } from '../models/Produit.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'product-list',
@@ -8,6 +10,9 @@ import { Produit } from '../models/Produit.model';
 })
 export class ProductListComponent implements OnInit {
 
+
+  @Input()
+  appRootRouter: Router;
   @Input()
   listeProduit: Produit[];
 
