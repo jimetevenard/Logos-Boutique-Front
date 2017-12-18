@@ -1,5 +1,8 @@
 <div>
-  <div>{{produit.nom}}</div>
-  <div>{{produit.prix}}</div>
+  <div><a routerLink="product-details" routerLinkActive="active" >{{produit.nom}}</a></div>
+ <div>{{produit.prix}}</div>
   <div>{{produit.prixPremium}}</div>
 </div>
+<router-outlet></router-outlet>
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Produit } from '../models/Produit.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-block',
@@ -11,9 +12,13 @@ export class ProductBlockComponent implements OnInit {
   @Input()
   produit: Produit;
   
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
+  }
+
+  clicked(product: Produit): void {
+    this.router.navigate(['product-details', this.produit]);
   }
 
 }

@@ -14,6 +14,13 @@ import { ProduitService } from './service/produit.service';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { PanierComponent } from './panier/panier.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductImgsComponent } from './product-imgs/product-imgs.component';
+import { ProductSuggestionComponent } from './product-suggestion/product-suggestion.component';
+import { ProductCheminComponent } from './product-chemin/product-chemin.component';
+import { ROUTES } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +30,19 @@ import { PanierComponent } from './panier/panier.component';
     ProductBlockComponent,
     CarouselComponent,
     FooterComponent,
-    PanierComponent
+    PanierComponent,
+    ProductDetailsComponent,
+    ProductImgsComponent,
+    ProductSuggestionComponent,
+    ProductCheminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [ProduitService],
   bootstrap: [AppComponent]
