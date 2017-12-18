@@ -14,6 +14,9 @@ import { ProduitService } from './service/produit.service';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { PanierComponent } from './panier/panier.component';
+import { OrderStageComponent } from './order-stage/order-stage.component';
+import { CommandeComponent } from './commande/commande.component';
+import { ProductRowComponent } from './product-row/product-row.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PanierComponent } from './panier/panier.component';
     ProductBlockComponent,
     CarouselComponent,
     FooterComponent,
-    PanierComponent
+    PanierComponent,
+    OrderStageComponent,
+    CommandeComponent,
+    ProductRowComponent
   ],
   imports: [
     BrowserModule,
