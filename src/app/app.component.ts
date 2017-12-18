@@ -34,6 +34,7 @@ export class AppComponent {
         // tslint:disable-next-line:whitespace
         null,
         null,
+        null,
         15.99
       )
     ];
