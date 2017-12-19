@@ -4,6 +4,7 @@ import { Langue } from '../models/Langue.model';
 import { ImagesProduit } from '../models/ImagesProduit.model';
 import { ProduitService } from '../service/produit.service';
 import { Router } from '@angular/router';
+import { ProduitApresFiltrationService } from '../service/produit-apres-filtration.service';
 
 @Component({
   selector: 'home',
@@ -15,8 +16,6 @@ export class HomeComponent implements OnInit {
 
   listeProduitSelected: Produit[];
 
-  ngOnInit() {
-  }
 
   @Input()
   appRootRouter: Router;
@@ -26,15 +25,21 @@ export class HomeComponent implements OnInit {
   @Input()
   produits: Produit[] = [];
 
+
   getAllProduits() {
     this.produitService.getAllProduits().subscribe(
       data => this.produits = data,
-      errorCode => console.log(errorCode)
+      errorCode => console.log(errorCode),
+      () => this.produitApresFiltrationService.produitsApresFiltration = this.produits
     );
   }
 
-  constructor(private produitService: ProduitService) {
+
+
+  constructor(private produitService: ProduitService,
+    private produitApresFiltrationService: ProduitApresFiltrationService) {
     this.getAllProduits();
+    
     this.panierProduits = [
       new Produit(
         1,
@@ -50,6 +55,10 @@ export class HomeComponent implements OnInit {
       )
     ];
 
+  }
+
+  ngOnInit() {
+    this.produitService.getAllProduits();
   }
 }
 

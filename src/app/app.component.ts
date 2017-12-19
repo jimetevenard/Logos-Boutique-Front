@@ -14,17 +14,9 @@ export class AppComponent {
 
   panierProduits: Produit[];
 
-  produits: Produit[] = [];
+  
+  constructor() {
 
-  getAllProduits() {
-    this.produitService.getAllProduits().subscribe(
-      data => this.produits = data,
-      errorCode => console.log(errorCode)
-    );
-  }
-
-  constructor(private produitService: ProduitService,  appRootRouter: Router) {
-    this.getAllProduits();
     this.panierProduits = [
       new Produit(
         1,

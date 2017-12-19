@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Produit } from '../models/Produit.model';
 import { Router } from '@angular/router';
 import { ProduitService } from '../service/produit.service';
+import { ProduitApresFiltrationService } from '../service/produit-apres-filtration.service';
 
 
 @Component({
@@ -27,10 +28,14 @@ export class ProductListComponent implements OnInit {
       this.onProduitSelected.emit(produit);
   }
 
-  constructor(private produitService: ProduitService) {
+  constructor(private produitService: ProduitService,
+              private produitApresFiltrationService: 
+              ProduitApresFiltrationService) {
     this.onProduitSelected = new EventEmitter();
+    
   }
   ngOnInit() {
+    
   }
 
 }

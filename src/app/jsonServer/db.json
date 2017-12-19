@@ -37,7 +37,7 @@
             "prixPremium": 13.99
         },
         {
-            "id": 1,
+            "id": 3,
             "nom": "livre1",
             "description": "description1",
             "prix": 19.99,
@@ -55,7 +55,7 @@
             "prixPremium": 15.99
         },
         {
-            "id": 2,
+            "id": 4,
             "nom": "livre2",
             "description": "description2",
             "prix": 17.99,
@@ -73,7 +73,7 @@
             "prixPremium": 13.99
         },
         {
-            "id": 1,
+            "id": 5,
             "nom": "livre1",
             "description": "description1",
             "prix": 19.99,
@@ -91,7 +91,7 @@
             "prixPremium": 15.99
         },
         {
-            "id": 2,
+            "id": 6,
             "nom": "livre2",
             "description": "description2",
             "prix": 17.99,
@@ -109,7 +109,7 @@
             "prixPremium": 13.99
         },
         {
-            "id": 1,
+            "id": 7,
             "nom": "livre1",
             "description": "description1",
             "prix": 19.99,
@@ -127,7 +127,7 @@
             "prixPremium": 15.99
         },
         {
-            "id": 2,
+            "id": 8,
             "nom": "livre2",
             "description": "description2",
             "prix": 17.99,

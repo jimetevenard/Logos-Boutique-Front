@@ -20,9 +20,8 @@
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" value=""
-                    [(ngModel)] = "isCD" 
-                    (ngModelChangeCD) = "changeValueCD()"
-                    (click)="filtreCD()"  data-category="CD"> CD
+                    [(ngModel)]="isCD" 
+                    (change)="filtre()"  data-category="CD"> CD
                   </label>
                 </div>
               </li>
@@ -31,8 +30,7 @@
                   <label>
                     <input type="checkbox" value=""
                     [(ngModel)] = "isDVD" 
-                    (ngModelChangeDVD) = "changeValueDVD()"
-                    (click)="filtreDVD()" 
+                    (change)="filtre()" 
                     data-category="DVD"> DVD
                   </label>
                 </div>
@@ -42,8 +40,7 @@
                   <label>
                     <input type="checkbox" value=""  
                     [(ngModel)] = "isLivre" 
-                    (ngModelChangeLivre) = "changeValueLivre()"
-                    (click)="filtreLivre()"
+                    (change)="filtre()"
                     data-category="livre"> Livre
                   </label>
                 </div>

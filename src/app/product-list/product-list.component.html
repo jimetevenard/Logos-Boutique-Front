@@ -1,7 +1,7 @@
 
 <div class="container">
     <div class="col-md-12">
-  <product-block *ngFor="let produit of produitService.produits"
+  <product-block *ngFor="let produit of produitApresFiltrationService.produitsApresFiltration"
   (click)='clicked(produit)'
   [produit]="produit"
   [appRootRouter]="appRootRouter"></product-block>
