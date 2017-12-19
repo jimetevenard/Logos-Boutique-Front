@@ -23,11 +23,11 @@ export class ProduitService {
     this.produitSelectionne = produitSelect ;
   }
 
-  returnProduct():  Produit{
+  returnProduct():  Produit {
     return this.produitSelectionne;
   }
 
-  getProduitById(id: number){
+  getProduitById(id: number) {
     // Bof bof tout ça...
 
     // il fadrait que les id soint uniques => objet
