@@ -24,15 +24,8 @@ export class HomeComponent implements OnInit {
   @Input()
   produits: Produit[] = [];
 
-  getAllProduits() {
-    this.produitService.getAllProduits().subscribe(
-      data => this.produits = data,
-      errorCode => console.log(errorCode)
-    );
-  }
 
   constructor(private produitService: ProduitService) {
-    this.getAllProduits();
     this.panierProduits = [
       new Produit(
         1,

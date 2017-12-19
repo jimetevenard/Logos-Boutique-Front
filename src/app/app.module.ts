@@ -25,6 +25,7 @@ import { FiltreBoardComponent } from './filtre-board/filtre-board.component';
 import { OrderStageComponent } from './order-stage/order-stage.component';
 import { CommandeComponent } from './commande/commande.component';
 import { ProductRowComponent } from './product-row/product-row.component';
+import { PanierService } from './service/panier-service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { ProductRowComponent } from './product-row/product-row.component';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProduitService],
+  providers: [ProduitService, PanierService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
