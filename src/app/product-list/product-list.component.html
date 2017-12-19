@@ -1,5 +1,10 @@
+
 <div class="container">
-  <div class="col-md-12">
-    <product-block *ngFor="let produit of listeProduit" [produit]="produit" (click)='clicked(produit)'></product-block>
+    <div class="col-md-12">
+  <product-block *ngFor="let produit of produitService.produits"
+  (click)='clicked(produit)'
+  [produit]="produit"
+  [appRootRouter]="appRootRouter"></product-block>
+
   </div>
 </div>
