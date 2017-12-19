@@ -11,11 +11,10 @@ import { PaiementComponent } from './paiement/paiement.component';
 export const ROUTES: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
-    {path: 'product-details', component: ProductDetailsComponent},
     {path: 'order-stage', component: OrderStageComponent},
     {path: 'commande', component: CommandeComponent},
     {path: 'connexion', component: ConnexionComponent},
     {path: 'livraison', component: LivraisonComponent},
-    {path: 'paiement', component: PaiementComponent}
-
+    {path: 'paiement', component: PaiementComponent},
+    {path: 'product-details/:idProduit', component: ProductDetailsComponent}
 ];

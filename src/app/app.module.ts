@@ -28,6 +28,7 @@ import { ProductRowComponent } from './product-row/product-row.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { LivraisonComponent } from './livraison/livraison.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { PanierService } from './service/panier-service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { PaiementComponent } from './paiement/paiement.component';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProduitService],
+  providers: [ProduitService, PanierService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

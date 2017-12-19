@@ -14,7 +14,6 @@ export class AppComponent {
 
   panierProduits: Produit[];
 
-  
   constructor() {
 
     this.panierProduits = [
@@ -31,8 +30,5 @@ export class AppComponent {
         15.99
       )
     ];
-
-  
-
   }
 }
