@@ -1,8 +1,9 @@
 import { Produit } from "./Produit.model";
 
 export class LigneCommande {
+    public id: number;
+    
     constructor(
-        public id: number,
         public produit: Produit,
         public quantite: number
     ) { }

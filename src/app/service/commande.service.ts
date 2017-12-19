@@ -9,18 +9,24 @@ import { Produit } from '../models/Produit.model';
 export class CommandeService {
 
   url: string = "";
-  ligneCommandes: LigneCommande[] = [
-    new LigneCommande(1, new Produit(1, "pouet", "pouetdesc", 12.99, 3, null, null, null, 10.99), 2),
-    new LigneCommande(1, new Produit(2, "pouet2", "pouetdesc2", 12.99, 3, null, null, null, 10.99), 2)
+  testLigneCommandes: LigneCommande[] = [
+    new LigneCommande( new Produit(1, "pouet", "pouetdesc", 12.99, 3, null, null, null, 10.99), 2),
+    new LigneCommande( new Produit(2, "pouet2", "pouetdesc2", 12.99, 3, null, null, null, 10.99), 2)
   ];
-  commande: Commande = new Commande(1, this.ligneCommandes, "3 rue des trou du cul")
+  testCommande: Commande = new Commande( this.testLigneCommandes, "3 rue des trou du cul");
+
+  commandeEnCours: Commande;
 
   constructor(private http: HttpClient) {
 
   }
 
+  initCommande(produits: Produit[]){
+    this.commandeEnCours = Commande.of(produits);
+  }
+
   postCommande() {
-    this.http.post(this.url, this.commande).subscribe(
+    this.http.post(this.url, this.commandeEnCours).subscribe(
       res => {
         console.log("goooood!!");
       },

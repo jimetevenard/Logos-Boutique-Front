@@ -30,6 +30,8 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { LivraisonComponent } from './livraison/livraison.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { PanierService } from './service/panier-service';
+import { CommandeService } from './service/commande.service';
+import { WindowRef } from './service/window.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,7 @@ import { PanierService } from './service/panier-service';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProduitService, ProduitApresFiltrationService, PanierService],
+  providers: [ProduitService, ProduitApresFiltrationService, PanierService, CommandeService, WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

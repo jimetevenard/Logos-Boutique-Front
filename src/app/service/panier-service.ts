@@ -7,8 +7,10 @@ export class PanierService {
   panierProduit: Produit[] = [];
 
   constructor() {
-    
+    // ne rien faire, c'est pas mal aussi...
   }
+
+
 
   ajouterProduit(product: Produit) {
     this.panierProduit.push(product);
