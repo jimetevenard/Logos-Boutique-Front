@@ -5,7 +5,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">Recherche Articles</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" >
 
           <div class="panel-heading ">
             <h4 class="panel-title">
@@ -19,21 +19,32 @@
               <li class="list-group-item">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value=""> CD
+                    <input type="checkbox" value=""
+                    [(ngModel)] = "isCD" 
+                    (ngModelChangeCD) = "changeValueCD()"
+                    (click)="filtreCD()"  data-category="CD"> CD
                   </label>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value=""> DVD
+                    <input type="checkbox" value=""
+                    [(ngModel)] = "isDVD" 
+                    (ngModelChangeDVD) = "changeValueDVD()"
+                    (click)="filtreDVD()" 
+                    data-category="DVD"> DVD
                   </label>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value=""> Livre
+                    <input type="checkbox" value=""  
+                    [(ngModel)] = "isLivre" 
+                    (ngModelChangeLivre) = "changeValueLivre()"
+                    (click)="filtreLivre()"
+                    data-category="livre"> Livre
                   </label>
                 </div>
               </li>

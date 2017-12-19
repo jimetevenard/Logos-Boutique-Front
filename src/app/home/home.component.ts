@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
 
+  listeProduitSelected: Produit[];
+
   ngOnInit() {
   }
 
