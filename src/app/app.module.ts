@@ -26,6 +26,10 @@ import { OrderStageComponent } from './order-stage/order-stage.component';
 import { CommandeComponent } from './commande/commande.component';
 import { ProductRowComponent } from './product-row/product-row.component';
 import { ProduitApresFiltrationService } from './service/produit-apres-filtration.service';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { LivraisonComponent } from './livraison/livraison.component';
+import { PaiementComponent } from './paiement/paiement.component';
+import { PanierService } from './service/panier-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,10 @@ import { ProduitApresFiltrationService } from './service/produit-apres-filtratio
     FiltreBoardComponent,
     OrderStageComponent,
     CommandeComponent,
-    ProductRowComponent
+    ProductRowComponent,
+    ConnexionComponent,
+    LivraisonComponent,
+    PaiementComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,11 @@ import { ProduitApresFiltrationService } from './service/produit-apres-filtratio
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
+<<<<<<< HEAD
   providers: [ProduitService, ProduitApresFiltrationService],
+=======
+  providers: [ProduitService, PanierService],
+>>>>>>> 67ecd5efbc8a7c29412041eebc3731ccf48ab8f2
   bootstrap: [AppComponent]
 })
 export class AppModule { }

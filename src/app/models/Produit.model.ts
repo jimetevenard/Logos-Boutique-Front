@@ -16,7 +16,5 @@ export class Produit {
         public langue: Langue,
         public categorie: Categorie,
         public prixPremium: number
-
-
     ){}
 }

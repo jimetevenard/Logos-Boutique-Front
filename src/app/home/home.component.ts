@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
 
   getAllProduits() {
-    this.produitService.getAllProduits().subscribe(
+    this.produitService.getObservableProduits().subscribe(
       data => this.produits = data,
       errorCode => console.log(errorCode),
       () => this.produitApresFiltrationService.produitsApresFiltration = this.produits
@@ -58,7 +58,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.produitService.getAllProduits();
   }
 }
 
