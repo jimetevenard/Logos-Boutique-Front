@@ -25,6 +25,9 @@ import { FiltreBoardComponent } from './filtre-board/filtre-board.component';
 import { OrderStageComponent } from './order-stage/order-stage.component';
 import { CommandeComponent } from './commande/commande.component';
 import { ProductRowComponent } from './product-row/product-row.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { LivraisonComponent } from './livraison/livraison.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { ProductRowComponent } from './product-row/product-row.component';
     FiltreBoardComponent,
     OrderStageComponent,
     CommandeComponent,
-    ProductRowComponent
+    ProductRowComponent,
+    ConnexionComponent,
+    LivraisonComponent,
+    PaiementComponent
   ],
   imports: [
     BrowserModule,

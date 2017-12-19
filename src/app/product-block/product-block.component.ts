@@ -21,9 +21,9 @@ export class ProductBlockComponent implements OnInit {
   }
 
   clickProduit(product: Produit): void {
-    console.log('C\'est l\'heure du Kebab !');
-    console.log(product);
-    this.router.navigate(['/product-details', this.produit]);
+    // console.log('C\'est l\'heure du Kebab !');
+    // console.log(product);
+    // this.router.navigate(['/product-details', this.produit]);
   }
 
 }
