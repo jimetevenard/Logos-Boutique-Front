@@ -60,11 +60,7 @@ import { PanierService } from './service/panier-service';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-<<<<<<< HEAD
-  providers: [ProduitService, ProduitApresFiltrationService],
-=======
-  providers: [ProduitService, PanierService],
->>>>>>> 67ecd5efbc8a7c29412041eebc3731ccf48ab8f2
+  providers: [ProduitService, ProduitApresFiltrationService, PanierService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
