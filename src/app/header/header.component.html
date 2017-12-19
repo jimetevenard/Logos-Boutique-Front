@@ -2,7 +2,7 @@
   <div class="container" class="nav1">
     <div class="row">
       <div class="col-sm-2">
-        Boutique
+        <a routerLink="/home">Boutique</a>
       </div>
       <div class="col-sm-4">
         <div class="input-group">
@@ -14,10 +14,9 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-2" data-toggle="modal" data-target="#myModal">
-        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> Panier</i>
-        <panier [panierProduits]="panierProduits"></panier>
-      </div>
+      
+        <panier></panier>
+      
       <div class="col-sm-2">
         <a href="#">Sign in</a>
       </div>

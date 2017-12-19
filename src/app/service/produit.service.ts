@@ -17,6 +17,7 @@ export class ProduitService {
 
   produits: Produit[] = [];
 
+
   produitSelectionne: Produit;
 
   getProduitSelectionne(produitSelect: Produit) {

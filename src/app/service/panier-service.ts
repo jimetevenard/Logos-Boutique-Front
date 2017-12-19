@@ -4,8 +4,11 @@ import { Produit } from '../models/Produit.model';
 @Injectable()
 export class PanierService {
 
-  panierProduit: Produit[];
-  constructor() { }
+  panierProduit: Produit[] = [];
+
+  constructor() {
+    
+  }
 
   ajouterProduit(product: Produit) {
     this.panierProduit.push(product);

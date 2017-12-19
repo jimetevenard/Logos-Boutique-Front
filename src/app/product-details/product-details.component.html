@@ -1,6 +1,11 @@
-<p>
+<div>
     Produit :
 
  {{produit.nom}}
 
-</p>
+ 
+<button class="add-to-cart" (click)="panierService.ajouterProduit(produit)" 
+[disabled]="panierService.panierProduit.includes(produit)">
+{{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produit)] }}
+</button>
+</div>
