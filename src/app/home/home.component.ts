@@ -12,6 +12,8 @@ import { ProduitService } from '../service/produit.service';
 export class HomeComponent implements OnInit {
 
 
+  listeProduitSelected: Produit[];
+
   ngOnInit() {
   }
 
