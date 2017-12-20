@@ -32,6 +32,7 @@ import { PaiementComponent } from './paiement/paiement.component';
 import { PanierService } from './service/panier-service';
 import { CommandeService } from './service/commande.service';
 import { WindowRef } from './service/window.service';
+import { ConnexionService } from './service/connexion.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,12 @@ import { WindowRef } from './service/window.service';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProduitService, ProduitApresFiltrationService, PanierService, CommandeService, WindowRef],
+  providers: [ProduitService, 
+    ProduitApresFiltrationService, 
+    PanierService, 
+    CommandeService, 
+    WindowRef, 
+    ConnexionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

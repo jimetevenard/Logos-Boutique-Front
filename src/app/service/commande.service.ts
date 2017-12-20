@@ -9,19 +9,17 @@ import { Produit } from '../models/Produit.model';
 export class CommandeService {
 
   url: string = "";
-
-
   commandeEnCours: Commande;
 
   constructor(private http: HttpClient) {
 
   }
 
-  
-
   initCommande(produits: Produit[]){
     this.commandeEnCours = Commande.of(produits);
   }
+
+  
 
   postCommande() {
     this.http.post(this.url, this.commandeEnCours).subscribe(
