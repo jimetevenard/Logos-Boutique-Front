@@ -7,4 +7,10 @@ export class LigneCommande {
         public produit: Produit,
         public quantite: number
     ) { }
+
+    
+
+    prixTotal(){
+       return this.produit.prix * this.quantite;
+    }
 }

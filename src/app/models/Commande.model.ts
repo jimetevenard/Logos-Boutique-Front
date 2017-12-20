@@ -21,4 +21,12 @@ export class Commande {
         public ligneCommande: LigneCommande[],
         public adresse: string
     ) { }
+
+    prixTotal(){
+        let tot: number = 0;
+        for(let lc of this.ligneCommande){
+            tot += lc.prixTotal();
+        }
+        return tot;
+    }
 }
