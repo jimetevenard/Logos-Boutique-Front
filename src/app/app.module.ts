@@ -23,7 +23,6 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FiltreBoardComponent } from './filtre-board/filtre-board.component';
 import { OrderStageComponent } from './order-stage/order-stage.component';
-import { CommandeComponent } from './commande/commande.component';
 import { ProductRowComponent } from './product-row/product-row.component';
 import { ProduitApresFiltrationService } from './service/produit-apres-filtration.service';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -33,6 +32,7 @@ import { PanierService } from './service/panier-service';
 import { CommandeService } from './service/commande.service';
 import { WindowRef } from './service/window.service';
 import { ConnexionService } from './service/connexion.service';
+import { PaiementService } from './service/paiement.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,6 @@ import { ConnexionService } from './service/connexion.service';
     HomeComponent,
     FiltreBoardComponent,
     OrderStageComponent,
-    CommandeComponent,
     ProductRowComponent,
     ConnexionComponent,
     LivraisonComponent,
@@ -63,12 +62,13 @@ import { ConnexionService } from './service/connexion.service';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ProduitService, 
-    ProduitApresFiltrationService, 
-    PanierService, 
-    CommandeService, 
-    WindowRef, 
-    ConnexionService],
+  providers: [ProduitService,
+    ProduitApresFiltrationService,
+    PanierService,
+    CommandeService,
+    WindowRef,
+    ConnexionService,
+    PaiementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

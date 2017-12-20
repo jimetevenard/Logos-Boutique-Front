@@ -27,7 +27,7 @@ export class ConnexionService {
             this.infoUtilisateur = res;
           },
         err => {
-    
+          
           }    
      );
      return observable;
