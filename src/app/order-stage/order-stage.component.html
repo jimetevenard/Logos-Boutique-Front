@@ -1,85 +1,140 @@
-<div class="container">
-  <h3>------------Stage------------</h3>
-  <div id="order-stage-tabs">
-    <ul class="nav nav-pills">
-      <li class="active" data-step="commande">
-        <a data-toggle="pill" href="#pills-commande">commande</a>
-      </li>
-      <li  class="{{ {true:'disabled'}[connexionService.isLoggedIn()] }}" data-step="connexion">
-        <a data-toggle="pill" href="#pills-connexion">connexion</a>
-      </li>
-      <li data-step="livraison">
-        <a data-toggle="pill" href="#pills-livraison">livraison</a>
-      </li>
-      <li data-step="paiement">
-        <a data-toggle="pill" href="#pills-paiement">paiement</a>
-      </li>
-      <li data-step="recap">
-        <a data-toggle="pill" href="#pills-recap">Recapitulatif</a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane fade in active" id="pills-commande" data-step="commande">
-        <div>
-          <p>Recapitulatif de votre commande :</p>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="container">
+      <div id="order-stage-tabs">
+        <ul class="nav nav-pills">
+          <li class="active" data-step="commande">
+            <a data-toggle="pill" href="#pills-commande">commande</a>
+          </li>
+          <li class="{{ {true:'disabled'}[connexionService.isLoggedIn()] }}" data-step="connexion">
+            <a data-toggle="pill" href="#pills-connexion">connexion</a>
+          </li>
+          <li data-step="livraison">
+            <a data-toggle="pill" href="#pills-livraison">livraison</a>
+          </li>
+          <li data-step="paiement">
+            <a data-toggle="pill" href="#pills-paiement">paiement</a>
+          </li>
+          <li data-step="recap">
+            <a data-toggle="pill" href="#pills-recap">Recapitulatif</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="pills-commande" data-step="commande">
+            <div>
+              <h3>Recapitulatif de votre commande :</h3>
+              <table class="table table-hover">
+                <tr>
+                  <th>Produit</th>
+                  <th>Prix Unitaire</th>
+                  <th>Quantité</th>
+                  <th>Prix Total</th>
+                </tr>
+                <tr *ngFor="let ligneCmd of commandeService.commandeEnCours.ligneCommande">
+                  <th>{{ ligneCmd.produit.nom }}</th>
+                  <th>{{ ligneCmd.produit.prix }}</th>
+                  <th>
+                    <input type="number" min="0" [(ngModel)]="ligneCmd.quantite" />
+                  </th>
+                  <th>{{ ligneCmd.prixTotal() }}</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>Prix Total</th>
+                  <th>{{ commandeService.commandeEnCours.prixTotal() }}</th>
+                </tr>
+              </table>
+              <!-- <div>{{ commandeService.commandeEnCours.prixTotal() }}</div> -->
 
-          <div *ngFor="let ligneCmd of commandeService.commandeEnCours.ligneCommande">
-            <span>{{ ligneCmd.produit.nom }}</span>
-            <span>{{ ligneCmd.produit.prix }}</span>
-            <span>
-              <input type="number" min="0" [(ngModel)]="ligneCmd.quantite" />
-            </span>
-            <span>{{ ligneCmd.prixTotal() }}</span>
+              <button class="btn btn-primary btn-lg" (click)="jumpToStep(stepAfterRecap())">Suivant</button>
+            </div>
           </div>
-          <div>{{ commandeService.commandeEnCours.prixTotal() }}</div>
 
-          <button class="btn" (click)="jumpToStep(stepAfterRecap())">Suivant</button>
+          <div class="tab-pane fade " id="pills-connexion" data-step="connexion">
+            <h3>Connectez-vous :</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+                  <span class="input-group-addon" id="sizing-addon3">Login</span>
+                  <input type="text" class="form-control" placeholder="Login" aria-describedby="sizing-addon3" [(ngModel)]="login" />
+                </div>
+
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="sizing-addon3">Password</span>
+                  <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon3" [(ngModel)]="password"
+                  />
+                </div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
+            <button class="btn btn-primary btn-lg" (click)="connexion(login, password)">Suivant</button>
+
+          </div>
+          <div class="tab-pane fade" id="pills-livraison" data-step="livraison">
+            <div>
+              <h2>Adresse de Livraison : </h2>
+              <textarea id="adresse" placeholder="Adresse..." [(ngModel)]="adresse"></textarea>
+            </div>
+
+            <div>
+              <button class="btn btn-primary btn-lg" (click)="livraison(adresse)">Suivant</button>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-paiement" data-step="paiement">
+            <p>&nbsp;</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+                  <span class="input-group-addon" id="sizing-addon3">Numero de CB</span>
+                  <input type="text" class="form-control" placeholder="Numero de CB" aria-describedby="sizing-addon3" [(ngModel)]="numCB" />
+                </div>
+
+                <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+                  <span class="input-group-addon" id="sizing-addon3">CVV</span>
+                  <input type="text" class="form-control" placeholder="CVV" aria-describedby="sizing-addon3" [(ngModel)]="cvv" />
+                </div>
+
+                <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+                  <span class="input-group-addon" id="sizing-addon3">Mois</span>
+                  <input type="text" class="form-control" placeholder="mois d'expiration" aria-describedby="sizing-addon3" [(ngModel)]="moisExp"
+                  />
+                </div>
+                <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+                  <span class="input-group-addon" id="sizing-addon3">Année</span>
+                  <input type="text" class="form-control" placeholder="année d'expiration" aria-describedby="sizing-addon3" [(ngModel)]="anneeExp"
+                  />
+                </div>
+
+                <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+                  <span class="input-group-addon" id="sizing-addon3">Nom Prénom</span>
+                  <input type="text" class="form-control" placeholder="Nom Prénom" aria-describedby="sizing-addon3" [(ngModel)]="nomPorteur"
+                  />
+                </div>
+              </div>
+              <p>&nbsp;</p>
+            </div>
+            <button class="btn btn-primary btn-lg" (click)="demandePaiement(numCB, cvv, moisExp, anneeExp, nomPorteur)">Paiement</button>
+
+           
+          </div>
+          <div class="tab-pane fade" id="pills-recap" data-step="recap">
+            <div *ngIf="paiementValide">
+                <h3>Votre commande a bien été prise en compte. </h3>
+                <h4>Votre numéro de facture est : {{ reponsePaiement }} </h4>
+            </div>
+            <div *ngIf="!(paiementValide)">
+                <h3>La validation de votre commande a échoué. </h3>
+                <h4>Vérifiez vos information banquaire</h4>
+            </div>
+              
+            </div>
         </div>
-      </div>
+        <!-- #order-stage-tabs -->
 
-      <div class="tab-pane fade " id="pills-connexion" data-step="connexion">
 
-        <label>Login</label>
-        <input type="text" id="login" [(ngModel)]="login" />
-        <br/>
-        <label>Password</label>
-        <input type="password" id="password" [(ngModel)]="password" />
-        <br/>
-        <button class="btn" (click)="connexion(login, password)">Suivant</button>
-
-      </div>
-      <div class="tab-pane fade" id="pills-livraison" data-step="livraison">
-        <div>
-          <label>Adresse de Livraison : </label>
-          <textarea id="adresse" placeholder="Adresse..." [(ngModel)]="adresse"></textarea>
-        </div>
-
-        <div>
-          <button class="btn" (click)="livraison(adresse)">Suivant</button>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="pills-paiement" data-step="paiement">
-
-        <label>Numero de CB</label>
-        <input type="text" id="numCB" [(ngModel)]="numCB" />
-        <br/>
-        <label>CVV</label>
-        <input type="text" id="cvv" [(ngModel)]="cvv" />
-        <br/>
-        <label>date d'expiration</label>
-        <input type="text" id="moisExp" [(ngModel)]="moisExp" />
-        <input type="text" id="anneeExp" [(ngModel)]="anneeExp" />
-        <br/>
-        <label>Nom du porteur</label>
-        <input type="text" id="nomPorteur" [(ngModel)]="nomPorteur" />
-        <button class="btn" (click)="demandePaiement(numCB, cvv, moisExp, anneeExp, nomPorteur)">Paiement</button>
-      </div>
-      <div class="tab-pane fade" id="pills-recap" data-step="recap">
-        {{ paiementValide }}
       </div>
     </div>
+    <div class="col-md-2"></div>
   </div>
-  <!-- #order-stage-tabs -->
-
-
-</div>

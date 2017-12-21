@@ -5,11 +5,12 @@ import { Informations } from '../models/Informations.model';
 import { InformationBancaire } from '../models/InformationBancaire.model';
 import { Commande } from '../models/Commande.model';
 import { Utilisateur } from '../models/Utilisateur.model';
+import { AppComponent } from '../app.component';
 
 @Injectable()
 export class PaiementService {
 
-  url = "http://localhost:8180/boutique_service/logos/information";
+  url = AppComponent.urlPaiement;
   validate: boolean;
 
 

@@ -12,6 +12,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  public static urlProduits: string = "http://192.168.102.145:8080/boutique_service/logos/produit";
+  public static urlPaiement: string = "http://192.168.102.145:8080/boutique_service/logos/commande";
+
+  public static urlConnexion: string = "http://mylogos.top/rest/login";
+
 
   constructor() {
   }

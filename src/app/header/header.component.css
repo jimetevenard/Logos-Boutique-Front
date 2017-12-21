@@ -1,6 +1,32 @@
 .nav1{
-    background-color:hotpink;
+    background-color:#3c2a54;
 }
-.nav2{
-    background-color: yellow;
+.nav2 {
+    padding: 12px;
+}
+.nav2 a {
+    position: relative;
+    top: 3px;
+
+    font-size: 1.1em;
+}
+img.logo {
+    height: 60px;
+    margin: 5px;
+}
+.panier, .recherche-produit
+ {
+    position: relative;
+    top: 17px;
+}
+.logzone {
+    font-size: 1.3em;
+
+    position: relative;
+    top: 18px;
+}
+.logzone,
+.logzone a,
+.logzone:visited {
+   color: white;
 }

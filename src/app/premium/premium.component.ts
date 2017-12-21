@@ -4,6 +4,7 @@ import { PanierService } from '../service/panier-service';
 import { InfoUtilisateur } from '../models/InfoUtilisateur.model';
 import { ConnexionService } from '../service/connexion.service';
 import { Produit } from '../models/Produit.model';
+import { Utilisateur } from '../models/Utilisateur.model';
 
 @Component({
   selector: 'premium',
@@ -45,15 +46,14 @@ export class PremiumComponent implements OnInit {
 
   premiumToCartCommand(){
     if(this.connexionService.isLoggedIn() && this.connexionService.infoUtilisateur.eleve == true){
-      this.premiumToCartAction();
+      this.premiumToCartAction(this.connexionService.infoUtilisateur.utilisateur);
     } else {
       this.logToiStp = true;
     }
   }
 
-  premiumToCartAction(){
-    this.produitPremium.premium = this.connexionService.infoUtilisateur.utilisateur.idUtilisateur;
-    console.log(this.connexionService.infoUtilisateur);
+  premiumToCartAction(utilisateur: Utilisateur){
+    this.produitPremium.premium = utilisateur.idUtilisateur;
     this.panierService.ajouterProduit(this.produitPremium);
   }
 
@@ -65,7 +65,7 @@ export class PremiumComponent implements OnInit {
         if (this.infosUserLocal.ok) {
           this.erreurLogin = false;
 
-          this.premiumToCartAction();
+          this.premiumToCartAction(this.infosUserLocal.utilisateur);
         } else {
           this.erreurLogin = true;
           console.log("pas connecté");

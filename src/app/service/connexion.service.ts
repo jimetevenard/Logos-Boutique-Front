@@ -3,11 +3,12 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { InfoUtilisateur } from '../models/InfoUtilisateur.model';
 import { Observable } from 'rxjs/Observable';
+import { AppComponent } from '../app.component';
 
 @Injectable()
 export class ConnexionService {
  // url = "http://localhost:8180/Logos_Front/rest/login";
-  url = "http://mylogos.top/rest/login";
+  url = AppComponent.urlConnexion;
 
 
   infoUtilisateur: InfoUtilisateur; //TODO modele

@@ -2,10 +2,12 @@
   <div class="container" class="nav1">
     <div class="row">
       <div class="col-sm-2">
-        <h2><a routerLink="/home">Boutique Logos</a></h2>
+        <a routerLink="/home">
+          <img class="logo" src="http://mylogos.top/images/logos-blanc.png" alt="Logos Boutique" >
+        </a>
       </div>
       <div class="col-sm-4">
-        <div class="input-group">
+        <div class="recherche-produit input-group">
           <input type="text" class="form-control" placeholder="Rechercher un produit">
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit">
@@ -14,22 +16,27 @@
           </div>
         </div>
       </div>
-      
-        <panier></panier>
-      
-        <div *ngIf="!(connexionService.isLoggedIn())">
-          <div class="col-sm-2">
-            <a href="#">Sign in</a>
-          </div>
-    
-          <div class="col-sm-2">
-            <a href="#">Log in</a>
-          </div>
 
-        </div>
-        <div *ngIf="(connexionService.isLoggedIn())">
-          Bonjour {{ connexionService.infoUtilisateur.utilisateur.prenom }}
-        </div>
+      <div class="panier">
+          <panier></panier>
+      </div>
+        
+      
+        <div class="logzone">
+          <div *ngIf="!(connexionService.isLoggedIn())">
+            <div class="col-sm-2">
+              <a href="#">Sign in</a>
+            </div>
+      
+            <div class="col-sm-2">
+              <a href="#">Log in</a>
+            </div>
+
+          </div>
+          <div *ngIf="(connexionService.isLoggedIn())">
+            Bonjour {{ connexionService.infoUtilisateur.utilisateur.prenom }}
+          </div>
+      </div>
 
       
 
@@ -37,7 +44,7 @@
 
 
   </div>
-  <div class="nav2" class="container">
+  <div class="nav2 container">
     <div class="row">
       <div class="col-sm-2">
         <a href="#">Livres</a>

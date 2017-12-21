@@ -25,6 +25,7 @@ export class OrderStageComponent implements OnInit {
   anneeExp: number;
   nomPorteur: string;
   infosUserLocal: InfoUtilisateur;
+  reponsePaiement: any;
   paiementValide: boolean;
 
   constructor(
@@ -79,15 +80,18 @@ export class OrderStageComponent implements OnInit {
     let commande: Commande = this.commandeService.commandeEnCours;
     let infoBancaire: InformationBancaire = new InformationBancaire(commande.prixTotal(), numbCB, cvv, moisExp, anneeExp, nomPorteur);
 
-    this.paiementService.validerPaiement(infoBancaire, commande, this.infosUserLocal.utilisateur).subscribe(
-      resp => this.paiementValide = resp,
+    this.paiementService.validerPaiement(infoBancaire, commande, this.connexionService.infoUtilisateur.utilisateur).subscribe(
+      resp => this.reponsePaiement = resp,
       er => console.error('erreur demande paiement!'),
       () => {
-        if (this.paiementValide) {
+          console.log(this.reponsePaiement);
+          if(this.reponsePaiement == '123456789'){
+            this.paiementValide = true;
+          } else {
+            this.paiementValide = false;
+          }
           this.jumpToStep('recap');
-        } else {
-          console.log("pas validé");
-        }
+        
       }
     )
   }

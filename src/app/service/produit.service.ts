@@ -3,11 +3,12 @@ import {HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Produit } from '../models/Produit.model';
 import { forEach } from '@angular/router/src/utils/collection';
+import { AppComponent } from '../app.component';
 
 @Injectable()
 export class ProduitService {
 
-  baseUrl: string = "http://localhost:8180/boutique_service/logos/produit";
+  baseUrl: string = AppComponent.urlProduits;
   
   constructor(private http: HttpClient) {
     console.log('CONST SERVICE');

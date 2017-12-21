@@ -1,0 +1,12 @@
+#adresse {
+    display: block;
+    width: 50%;
+    margin-top: 12px;
+    margin-bottom: 17px;
+}
+#pills-paiement .row{
+    margin-bottom: 12px;
+}
+ul.nav a{
+    font-size: 1.3em;
+}
