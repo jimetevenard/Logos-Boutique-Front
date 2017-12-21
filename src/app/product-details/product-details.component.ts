@@ -35,7 +35,8 @@ export class ProductDetailsComponent implements OnInit {
     this.commandeService.initCommande(this.panierService.panierProduit);
     this.router.navigate(['/order-stage']);
     this.panierService.produitAdded = false;
-    this.panierVisited = true:
+    this.panierVisited = true;
+    
   }
 
 }

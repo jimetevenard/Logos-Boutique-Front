@@ -1,31 +1,38 @@
+<div class="jumbotron">
+  <div class="container">
+    <!-- une jolie image en plein largeur -->
+    <h1>Devenez premium</h1>
+    <p class="description">bla bla bla... pour {{produitPremium.prix }} €/mois</p>
 
-  <h2>Devenez premium</h2>
+    <!-- prix 999 999 999 $ -->
 
-  <!-- une jolie image en plein largeur -->
-
-  <p class="description">bla bla bla...</p>
-  
-  
-  <!-- prix 999 999 999 $ -->
-
-  <button *ngIf="!(logToiStp)" (click)="premiumToCartCommand()" [disabled]="panierService.panierProduit.includes(produitPremium)">
+    <button class="btn btn-primary btn-lg" *ngIf="!(logToiStp)" (click)="premiumToCartCommand()" [disabled]="panierService.panierProduit.includes(produitPremium)">
       {{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produitPremium)] }}
-      </button>
+    </button>
 
-  <div class="panneau-login" *ngIf="logToiStp">
-    <h3>Cet article est personalisé. veuillez vous connecter.</h3>
+    <div class="panneau-login" *ngIf="logToiStp">
+      <h3>Cet article est personalisé. veuillez vous connecter.</h3>
 
-    <div *ngIf="erreurLogin" class="alert alert-danger" role="alert">
-      Votre mot de passe et/ou votre identifiant n'ont pas été reconnus
+      <div *ngIf="erreurLogin" class="alert alert-danger" role="alert">
+        Votre mot de passe et/ou votre identifiant n'ont pas été reconnus
+      </div>
+      
+        <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+          <span class="input-group-addon" id="sizing-addon3">Login</span>
+          <input type="text" class="form-control" placeholder="Login" aria-describedby="sizing-addon3" [(ngModel)]="login" />
+        </div>
+
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="sizing-addon3">Password</span>
+          <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon3" [(ngModel)]="password"
+          />
+        </div>
+      
+      <p>&nbsp;</p>
+
+      <button class="btn btn-primary btn-lg" (click)="connexion()">Continuer</button>
+
     </div>
-
-
-    <label>Login</label>
-    <input type="text" id="login" [(ngModel)]="login" />
-    <br/>
-    <label>Password</label>
-    <input type="password" id="password" [(ngModel)]="password" />
-    <br/>
-    <button class="btn" (click)="connexion()">Continuer</button>
-
-  </div><!-- /login -->
+    <!-- /login -->
+  </div>
+</div>
