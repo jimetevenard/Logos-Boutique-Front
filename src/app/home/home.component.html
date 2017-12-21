@@ -1,6 +1,16 @@
-<app-carousel></app-carousel>
-<div id="titleGeneral">----------------Nos Articles----------------</div>
 <div class="home">
-    <product-list [listeProduit]="produits" [appRootRouter]="appRootRouter"></product-list>
-    <app-filtre-board [listBeforeFiltered]="produits"></app-filtre-board>
+    <div class="row">
+        <div class="col-md-12">
+            <app-carousel></app-carousel>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <app-filtre-board [listBeforeFiltered]="produits"></app-filtre-board>
+        </div>
+        <div class="col-md-10">
+            <product-list [listeProduit]="produits" [appRootRouter]="appRootRouter"></product-list>
+        </div>
+    </div>
+
 </div>

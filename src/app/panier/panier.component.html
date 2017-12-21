@@ -13,7 +13,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Panier</h4>
       </div>
-      <div>
+      <div class="liste-panier">
         <ul>
           <li *ngFor="let item of panierService.panierProduit">
             
@@ -21,7 +21,7 @@
           </li>
         </ul>
         <p>Panier piano</p>
-        <button type="button" class="btn btn-outline-primary" (click)="validerPanier()">Passe ta commande !</button>
+        <button type="button" class="btn btn-primary" (click)="validerPanier()">Voir la commande !</button>
       </div>
     </div>
 
