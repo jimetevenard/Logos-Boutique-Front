@@ -32,6 +32,17 @@ export class ConnexionService {
      );
      return observable;
   }
+
+  isLoggedIn(): boolean{
+    if(this.infoUtilisateur == undefined){
+      return false;
+    }
+    if(this.infoUtilisateur.ok == false){
+      return false;
+    }
+
+    return true;
+  }
     
     
 

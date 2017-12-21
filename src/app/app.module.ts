@@ -15,24 +15,20 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { PanierComponent } from './panier/panier.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ProductImgsComponent } from './product-imgs/product-imgs.component';
 import { ProductSuggestionComponent } from './product-suggestion/product-suggestion.component';
-import { ProductCheminComponent } from './product-chemin/product-chemin.component';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FiltreBoardComponent } from './filtre-board/filtre-board.component';
 import { OrderStageComponent } from './order-stage/order-stage.component';
-import { ProductRowComponent } from './product-row/product-row.component';
 import { ProduitApresFiltrationService } from './service/produit-apres-filtration.service';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { LivraisonComponent } from './livraison/livraison.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { PanierService } from './service/panier-service';
 import { CommandeService } from './service/commande.service';
 import { WindowRef } from './service/window.service';
 import { ConnexionService } from './service/connexion.service';
 import { PaiementService } from './service/paiement.service';
+import { PremiumComponent } from './premium/premium.component';
 
 @NgModule({
   declarations: [
@@ -44,16 +40,12 @@ import { PaiementService } from './service/paiement.service';
     FooterComponent,
     PanierComponent,
     ProductDetailsComponent,
-    ProductImgsComponent,
     ProductSuggestionComponent,
-    ProductCheminComponent,
     HomeComponent,
     FiltreBoardComponent,
     OrderStageComponent,
-    ProductRowComponent,
-    ConnexionComponent,
-    LivraisonComponent,
-    PaiementComponent
+    PaiementComponent,
+    PremiumComponent
   ],
   imports: [
     BrowserModule,

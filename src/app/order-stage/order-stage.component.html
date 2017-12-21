@@ -5,7 +5,7 @@
       <li class="active" data-step="commande">
         <a data-toggle="pill" href="#pills-commande">commande</a>
       </li>
-      <li data-step="connexion">
+      <li  class="{{ {true:'disabled'}[connexionService.isLoggedIn()] }}" data-step="connexion">
         <a data-toggle="pill" href="#pills-connexion">connexion</a>
       </li>
       <li data-step="livraison">
@@ -33,11 +33,11 @@
           </div>
           <div>{{ commandeService.commandeEnCours.prixTotal() }}</div>
 
-          <button class="btn" (click)="jumpToStep('connexion')">Suivant</button>
+          <button class="btn" (click)="jumpToStep(stepAfterRecap())">Suivant</button>
         </div>
       </div>
 
-      <div class="tab-pane fade" id="pills-connexion" data-step="connexion">
+      <div class="tab-pane fade " id="pills-connexion" data-step="connexion">
 
         <label>Login</label>
         <input type="text" id="login" [(ngModel)]="login" />

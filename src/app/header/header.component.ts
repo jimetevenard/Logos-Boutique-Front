@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ConnexionService } from '../service/connexion.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Input()
   panierProduits;
 
-  constructor() { }
+  constructor(private connexionService: ConnexionService) { }
 
   ngOnInit() {
   }

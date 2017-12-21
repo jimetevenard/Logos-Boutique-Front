@@ -6,8 +6,10 @@ import { Categorie } from "./Categorie.model";
 
 export class Produit {
   
+    public id: number;
+    public premium: number;
+
     constructor(
-        public id: number,
         public nom: string,
         public description: string,
         public prix: number,

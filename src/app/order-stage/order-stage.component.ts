@@ -55,6 +55,11 @@ export class OrderStageComponent implements OnInit {
       er => console.error('Erreur connexion!'),
       () => {
         if (this.infosUserLocal.ok) {
+          let win = this.winRef.nativeWindow;
+          win.$('li[data-step="connexion"]').addClass('disabled');
+          win.$('li[data-step="connexion"] a').removeData('toggle');
+          win.$('li[data-step="connexion"] a').removeAttr('href');
+
           this.jumpToStep('livraison');
         } else {
           console.log("pas connecté");
@@ -86,4 +91,13 @@ export class OrderStageComponent implements OnInit {
       }
     )
   }
+
+  stepAfterRecap(): string {
+    if(this.connexionService.isLoggedIn()){
+      return 'livraison';
+    } else {
+      return 'connexion';
+    }
+  }
+
 }

@@ -39,22 +39,6 @@ export class HomeComponent implements OnInit {
   constructor(private produitService: ProduitService,
     private produitApresFiltrationService: ProduitApresFiltrationService) {
     this.getAllProduits();
-    
-    this.panierProduits = [
-      new Produit(
-        1,
-        'livre1',
-        'description',
-        19.99,
-        15,
-        // tslint:disable-next-line:whitespace
-        null,
-        null,
-        null,
-        15.99
-      )
-    ];
-
   }
 
   ngOnInit() {

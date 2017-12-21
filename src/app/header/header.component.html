@@ -2,7 +2,7 @@
   <div class="container" class="nav1">
     <div class="row">
       <div class="col-sm-2">
-        <a routerLink="/home">Boutique</a>
+        <h1><a routerLink="/home">Boutique</a></h1>
       </div>
       <div class="col-sm-4">
         <div class="input-group">
@@ -17,13 +17,21 @@
       
         <panier></panier>
       
-      <div class="col-sm-2">
-        <a href="#">Sign in</a>
-      </div>
+        <div *ngIf="!(connexionService.isLoggedIn())">
+          <div class="col-sm-2">
+            <a href="#">Sign in</a>
+          </div>
+    
+          <div class="col-sm-2">
+            <a href="#">Log in</a>
+          </div>
 
-      <div class="col-sm-2">
-        <a href="#">Log in</a>
-      </div>
+        </div>
+        <div *ngIf="(connexionService.isLoggedIn())">
+          Bonjour {{ connexionService.infoUtilisateur.utilisateur.prenom }}
+        </div>
+
+      
 
     </div>
 
@@ -41,7 +49,7 @@
         <a href="#">DVD</a>
       </div>
       <div class="col-sm-2">
-        <a href="#">Premium</a>
+        <a routerLink="/premium">Premium</a>
       </div>
       <div class="col-sm-1">
         <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
