@@ -3,7 +3,8 @@ import { Produit } from '../models/Produit.model';
 
 @Injectable()
 export class PanierService {
-
+  premiumIsInCart: boolean = false;
+  produitAdded: boolean = false;
   panierProduit: Produit[] = [];
 
   constructor() {
@@ -13,11 +14,24 @@ export class PanierService {
 
 
   ajouterProduit(product: Produit) {
-    this.panierProduit.push(product);
+    if(product.premium != undefined){
+      if(!this.premiumIsInCart){
+        this.produitAdded = true
+        this.panierProduit.push(product);
+      }
+      this.premiumIsInCart = true;
+      
+    } else {
+      this.panierProduit.push(product);
+      this.produitAdded = true
+    }
+    
   }
 
   enleverProduit(product: Produit) {
-    // tslint:disable-next-line:prefer-const
+    if(product.premium != 0){
+      this.premiumIsInCart = false;
+    }
     let index = this.panierProduit.indexOf(product);
     this.panierProduit.splice(index);
   }

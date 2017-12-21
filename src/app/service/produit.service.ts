@@ -7,7 +7,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 @Injectable()
 export class ProduitService {
 
-  baseUrl: string = "http://localhost:3000/produits";
+  baseUrl: string = "http://localhost:8180/boutique_service/logos/produit";
   
   constructor(private http: HttpClient) {
     console.log('CONST SERVICE');

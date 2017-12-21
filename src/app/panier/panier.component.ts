@@ -10,8 +10,6 @@ import { WindowRef } from '../service/window.service';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent implements OnInit {
-  
-
 
   constructor(
     private router: Router,

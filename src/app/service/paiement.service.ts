@@ -9,7 +9,7 @@ import { Utilisateur } from '../models/Utilisateur.model';
 @Injectable()
 export class PaiementService {
 
-  url = "http://192.168.102.45:8180/boutique_service/logos/information";
+  url = "http://localhost:8180/boutique_service/logos/information";
   validate: boolean;
 
 

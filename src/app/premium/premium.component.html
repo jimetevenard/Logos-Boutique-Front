@@ -1,8 +1,24 @@
 
+  <h2>Devenez premium</h2>
 
-  <button>Devenir un membre Premium</button>
-  <div>
-    <h1>Connectez-vous</h1>
+  <!-- une jolie image en plein largeur -->
+
+  <p class="description">bla bla bla...</p>
+  
+  
+  <!-- prix 999 999 999 $ -->
+
+  <button *ngIf="!(logToiStp)" (click)="premiumToCartCommand()" [disabled]="panierService.panierProduit.includes(produitPremium)">
+      {{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produitPremium)] }}
+      </button>
+
+  <div class="panneau-login" *ngIf="logToiStp">
+    <h3>Cet article est personalisé. veuillez vous connecter.</h3>
+
+    <div *ngIf="erreurLogin" class="alert alert-danger" role="alert">
+      Votre mot de passe et/ou votre identifiant n'ont pas été reconnus
+    </div>
+
 
     <label>Login</label>
     <input type="text" id="login" [(ngModel)]="login" />
@@ -10,6 +26,6 @@
     <label>Password</label>
     <input type="password" id="password" [(ngModel)]="password" />
     <br/>
-    <button class="btn" (click)="connexion()">Suivant</button>
+    <button class="btn" (click)="connexion()">Continuer</button>
 
-  </div>
+  </div><!-- /login -->

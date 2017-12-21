@@ -1,5 +1,6 @@
 export class Utilisateur{
-    public id: number;
+    public id: number; // backboutique (???)
+    public idUtilisateur: number; // logos
 
     constructor(
         public nom: string,

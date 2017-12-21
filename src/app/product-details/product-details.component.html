@@ -1,11 +1,10 @@
 <div>
-    Produit :
+    <div *ngIf="panierService.produitAdded && !panierVisited" class="alert alert-success" role="alert">Le produit a été ajouté au panier!
+        <a (click)="showPanier()">Cliquez ici </a> pour voir votre panier</div>
 
- {{produit.nom}}
+    Produit : {{produit.nom}}
 
- 
-<button class="add-to-cart" (click)="panierService.ajouterProduit(produit)" 
-[disabled]="panierService.panierProduit.includes(produit)">
-{{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produit)] }}
-</button>
+    <button class="add-to-cart" (click)="panierService.ajouterProduit(produit)" [disabled]="panierService.panierProduit.includes(produit)">
+        {{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produit)] }}
+    </button>
 </div>

@@ -22,7 +22,6 @@ import { HomeComponent } from './home/home.component';
 import { FiltreBoardComponent } from './filtre-board/filtre-board.component';
 import { OrderStageComponent } from './order-stage/order-stage.component';
 import { ProduitApresFiltrationService } from './service/produit-apres-filtration.service';
-import { PaiementComponent } from './paiement/paiement.component';
 import { PanierService } from './service/panier-service';
 import { CommandeService } from './service/commande.service';
 import { WindowRef } from './service/window.service';
@@ -44,7 +43,6 @@ import { PremiumComponent } from './premium/premium.component';
     HomeComponent,
     FiltreBoardComponent,
     OrderStageComponent,
-    PaiementComponent,
     PremiumComponent
   ],
   imports: [
