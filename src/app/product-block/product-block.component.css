@@ -2,3 +2,13 @@ img.vignette {
     height: 150px;
     
 }
+div.caption.block h3{
+    min-height: 62px;
+}
+div.caption.block .description{
+    min-height: 110px;
+}
+div.caption.block .prix{
+    font-size: 1.2em;
+    font-weight: bold;
+}

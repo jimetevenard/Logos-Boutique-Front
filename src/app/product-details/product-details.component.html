@@ -1,10 +1,31 @@
 <div>
-    <div *ngIf="panierService.produitAdded && !panierVisited" class="alert alert-success" role="alert">Le produit a été ajouté au panier!
-        <a (click)="showPanier()">Cliquez ici </a> pour voir votre panier</div>
+    <div class="container">
+        <div class="row">
+            <span class="chemin">{{produit.categorie.libelle}} > {{produit.langue.libelle}} > {{produit.nom}}</span>
 
-    Produit : {{produit.nom}}
+        </div>
+        <div *ngIf="produitAdded" class="alert alert-success" role="alert">Le produit a été ajouté au panier!
+            <a (click)="showPanier()">Cliquez ici </a> pour voir votre panier</div>
+        <div class="row">
+            <div class="col-md-4">
+                <img class="image" src="{{produit.listeImagesProduit[0].urlImage}}">
+            </div>
+            <div class="col-md-8">
+                <div class="nom-prix"> {{produit.nom}}</div>
+                <div class="nom-prix"> {{produit.prix}}€ TTC</div>
+                <div class="description">Description produit: </div>
+                <div> {{produit.description}}</div>
+                <p>&nbsp;</p>
+                <button class="btn btn-primary btn-lg add-to-cart" (click)="ajouterPanier(produit)" [disabled]="panierService.panierProduit.includes(produit)">
+                    {{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produit)] }}
+                </button>
+            </div>
 
-    <button class="add-to-cart" (click)="panierService.ajouterProduit(produit)" [disabled]="panierService.panierProduit.includes(produit)">
-        {{ {true:'Produit ajouté au panier',false:'Ajouter au panier'}[panierService.panierProduit.includes(produit)] }}
-    </button>
+
+
+
+
+
+        </div>
+    </div>
 </div>

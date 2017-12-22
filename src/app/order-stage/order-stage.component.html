@@ -35,15 +35,15 @@
                   <th>{{ ligneCmd.produit.nom }}</th>
                   <th>{{ ligneCmd.produit.prix }}</th>
                   <th>
-                    <input type="number" min="0" [(ngModel)]="ligneCmd.quantite" />
+                    <input type="typeInput(ligneCmd.produit)" min="0" [(ngModel)]="ligneCmd.quantite" />
                   </th>
-                  <th>{{ ligneCmd.prixTotal() }}</th>
+                  <th >{{ ligneCmd.prixTotal() }}€ </th>
                 </tr>
                 <tr>
                   <th></th>
                   <th></th>
                   <th>Prix Total</th>
-                  <th>{{ commandeService.commandeEnCours.prixTotal() }}</th>
+                  <th >{{ commandeService.commandeEnCours.prixTotal() }}€ TTC</th>
                 </tr>
               </table>
               <!-- <div>{{ commandeService.commandeEnCours.prixTotal() }}</div> -->

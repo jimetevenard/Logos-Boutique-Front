@@ -23,10 +23,6 @@ export class PanierComponent implements OnInit {
   validerPanier(){
     this.window.nativeWindow.$('#myModal').modal('hide');
     this.commandeService.initCommande(this.panierService.panierProduit);
-
-    console.log('On serait pas en train de créer une commande, là ?');
-    console.log(this.commandeService.commandeEnCours);
-
     this.router.navigate(['/order-stage']);
 
   }

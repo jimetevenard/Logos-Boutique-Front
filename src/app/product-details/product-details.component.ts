@@ -15,6 +15,7 @@ export class ProductDetailsComponent implements OnInit {
 
   produit: Produit;
   panierVisited: boolean = false;
+  produitAdded: boolean = false;
 
 
   constructor(
@@ -29,14 +30,24 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     let idProduit: number = parseInt(this.route.snapshot.paramMap.get('idProduit'));
     this.produit = this.serviceProduit.getProduitById(idProduit);
+    this.produitAdded = false;
   }
 
   showPanier() {
     this.commandeService.initCommande(this.panierService.panierProduit);
     this.router.navigate(['/order-stage']);
-    this.panierService.produitAdded = false;
     this.panierVisited = true;
-    
   }
+
+  ajouterPanier(produit: Produit){
+    this.produitAdded = true;
+    this.panierService.ajouterProduit(produit);
+  }
+
+
+
+
+
+
 
 }

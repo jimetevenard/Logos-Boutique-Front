@@ -1,0 +1,14 @@
+div.panier{
+    margin: 15px;
+}
+div.produit{
+    font-size: 1.2em;
+    margin: 5px; 
+}
+
+div.prix{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px; 
+
+}

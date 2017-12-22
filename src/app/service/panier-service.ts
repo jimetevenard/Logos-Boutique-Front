@@ -4,7 +4,7 @@ import { Produit } from '../models/Produit.model';
 @Injectable()
 export class PanierService {
   premiumIsInCart: boolean = false;
-  produitAdded: boolean = false;
+  // produitAdded: boolean = false;
   panierProduit: Produit[] = [];
 
   constructor() {
@@ -16,14 +16,12 @@ export class PanierService {
   ajouterProduit(product: Produit) {
     if(product.premium != undefined){
       if(!this.premiumIsInCart){
-        this.produitAdded = true
         this.panierProduit.push(product);
       }
       this.premiumIsInCart = true;
       
     } else {
       this.panierProduit.push(product);
-      this.produitAdded = true
     }
     
   }

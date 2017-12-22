@@ -33,9 +33,9 @@
             </div>
 
           </div>
-          <div *ngIf="(connexionService.isLoggedIn())">
+          <p *ngIf="(connexionService.isLoggedIn())">
             Bonjour {{ connexionService.infoUtilisateur.utilisateur.prenom }}
-          </div>
+          </p>
       </div>
 
       
@@ -65,7 +65,7 @@
         <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-sm-1">
-        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-sm-1">
         <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>

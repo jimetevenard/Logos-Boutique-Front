@@ -1,7 +1,7 @@
 <div class=" col-sm-2" data-toggle="modal" style="color: white;" data-target="#myModal">
-    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> Panier</i>
-  
-  </div>
+  <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> Panier</i>
+
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
@@ -13,17 +13,16 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Panier</h4>
       </div>
-      <div class="liste-panier">
-        <ul>
-          <li *ngFor="let item of panierService.panierProduit">
-            
-            {{item.nom}}
-          </li>
-        </ul>
-        <p>Panier piano</p>
+      <div >
+        <div class="row" *ngFor="let item of panierService.panierProduit">
+            <div class="col-md-6 produit">{{item.nom}} :</div>
+            <div class="col-md-3 prix"> {{item.prix}}€ TTC</div>
+        </div>
+      </div>
+      <div class="row panier">
         <button type="button" class="btn btn-primary" (click)="validerPanier()">Voir la commande !</button>
       </div>
     </div>
-
   </div>
+
 </div>

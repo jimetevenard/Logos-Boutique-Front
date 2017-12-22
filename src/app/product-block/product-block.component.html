@@ -1,10 +1,10 @@
 <div class="col-sm-6 col-md-4">
   <div class="thumbnail">
     <img class="vignette" src="{{ checkImgProd() }}">
-    <div class="caption">
+    <div class="caption block">
       <h3>{{produit.nom}}</h3>
-      <p>{{produit.description}}</p>
-      <p>{{afficherPrix()}}€ TTC</p>
+      <p class="description">{{produit.description}}</p>
+      <p class="prix">{{afficherPrix()}}€ TTC</p>
       <p>
         <a routerLink="/product-details/{{produit.id}}" class="btn btn-primary" role="button">Voir détails</a>
       </p>

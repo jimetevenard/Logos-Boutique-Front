@@ -8,6 +8,7 @@ import { Commande } from '../models/Commande.model';
 import { Informations } from '../models/Informations.model';
 import { InformationBancaire } from '../models/InformationBancaire.model';
 import { PaiementService } from '../service/paiement.service';
+import { Produit } from '../models/Produit.model';
 
 @Component({
   selector: 'order-stage',
@@ -84,24 +85,31 @@ export class OrderStageComponent implements OnInit {
       resp => this.reponsePaiement = resp,
       er => console.error('erreur demande paiement!'),
       () => {
-          console.log(this.reponsePaiement);
-          if(this.reponsePaiement == '123456789'){
-            this.paiementValide = true;
-          } else {
-            this.paiementValide = false;
-          }
-          this.jumpToStep('recap');
-        
+        console.log(this.reponsePaiement);
+        if (this.reponsePaiement == '123456789') {
+          this.paiementValide = true;
+        } else {
+          this.paiementValide = false;
+        }
+        this.jumpToStep('recap');
+
       }
     )
   }
 
   stepAfterRecap(): string {
-    if(this.connexionService.isLoggedIn()){
+    if (this.connexionService.isLoggedIn()) {
       return 'livraison';
     } else {
       return 'connexion';
     }
   }
 
+  typeInput(produit: Produit): string {
+    if (produit.premium > 0) {
+      return 'hidden';
+    } else {
+      return 'number';
+    }
+  }
 }
