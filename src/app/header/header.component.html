@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-2">
         <a routerLink="/home">
-          <img class="logo" src="http://mylogos.top/images/logos-blanc.png" alt="Logos Boutique" >
+          <img class="logo" src="http://mylogos.top/images/logos-blanc.png" alt="Logos Boutique">
         </a>
       </div>
       <div class="col-sm-4">
@@ -17,28 +17,29 @@
         </div>
       </div>
 
-      <div class="panier">
+      <div class="col-sm-3">
+        <div class="panier">
           <panier></panier>
+        </div>
       </div>
-        
-      
-        <div class="logzone">
-          <div *ngIf="!(connexionService.isLoggedIn())">
-            <div class="col-sm-2">
-              <a href="#">Sign in</a>
-            </div>
-      
-            <div class="col-sm-2">
-              <a href="#">Log in</a>
-            </div>
 
-          </div>
+      <div class="col-sm-3">
+
+        <div class="logzone">
+          <p *ngIf="!(connexionService.isLoggedIn())">
+
+            <a href="#">Sign in</a>
+
+            <a href="#">Log in</a>
+
+          </p>
           <p *ngIf="(connexionService.isLoggedIn())">
             Bonjour {{ connexionService.infoUtilisateur.utilisateur.prenom }}
           </p>
+        </div>
       </div>
 
-      
+
 
     </div>
 

@@ -2,7 +2,9 @@
   <div class="container">
     <!-- une jolie image en plein largeur -->
     <h1>Devenez premium</h1>
-    <p class="description">bla bla bla... pour {{produitPremium.prix }} €/mois</p>
+    <p class="description">Grâce à l'abonnement premium de Logos participez aux cours de votre choix sans aucune limite. </p>
+
+    <p class="description"> Devenez premium pour {{produitPremium.prix }} €/mois! </p>
 
     <!-- prix 999 999 999 $ -->
 
@@ -16,21 +18,23 @@
       <div *ngIf="erreurLogin" class="alert alert-danger" role="alert">
         Votre mot de passe et/ou votre identifiant n'ont pas été reconnus
       </div>
-      
-        <div class="input-group input-group-lg" style="margin-bottom: 10px;">
-          <span class="input-group-addon" id="sizing-addon3">Login</span>
-          <input type="text" class="form-control" placeholder="Login" aria-describedby="sizing-addon3" [(ngModel)]="login" />
-        </div>
 
-        <div class="input-group input-group-lg">
-          <span class="input-group-addon" id="sizing-addon3">Password</span>
-          <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon3" [(ngModel)]="password"
-          />
-        </div>
-      
+      <div class="input-group input-group-lg" style="margin-bottom: 10px;">
+        <span class="input-group-addon" id="sizing-addon3">Login</span>
+        <input type="text" class="form-control" placeholder="Login" aria-describedby="sizing-addon3" [(ngModel)]="login" />
+      </div>
+
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="sizing-addon3">Password</span>
+        <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon3" [(ngModel)]="password"
+        />
+      </div>
+
       <p>&nbsp;</p>
 
-      <button class="btn btn-primary btn-lg" (click)="connexion()">Continuer</button>
+      <button class="btn btn-primary btn-lg" (click)="connexion()">
+        {{ {true:'Produit ajouté au panier',false:'Connexion et ajouter au panier'}[panierService.panierProduit.includes(produitPremium)]
+        }}</button>
 
     </div>
     <!-- /login -->
