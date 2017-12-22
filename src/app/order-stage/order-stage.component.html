@@ -35,7 +35,7 @@
                   <th>{{ ligneCmd.produit.nom }}</th>
                   <th>{{ ligneCmd.produit.prix }}</th>
                   <th>
-                    <input type="typeInput(ligneCmd.produit)" min="0" [(ngModel)]="ligneCmd.quantite" />
+                    <input type="number" min="0" [(ngModel)]="ligneCmd.quantite" />
                   </th>
                   <th >{{ ligneCmd.prixTotal() }}€ </th>
                 </tr>
